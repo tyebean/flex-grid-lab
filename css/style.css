@@ -1,0 +1,147 @@
+html {
+  box-sizing: border-box
+}
+
+:root {
+  font-size: 62.5%
+}
+
+body {
+  background-color: rgb(151, 179, 159);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  background-color: rgb(216, 235, 225);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+}
+
+#status {
+  justify-content: right;
+  text-align: right;
+  margin-left: auto;
+  padding: 10px;
+  color: rgba(0, 0, 0, 0.411);
+}
+
+#offer{
+  margin: 10px;
+}
+
+#contact {
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  align-items: flex-end;
+}
+
+#contact p {
+  background-color: #15a07030 ;
+  width: 50%;
+  padding: 25px;
+  margin: 0px;
+  height: 10px;
+}
+
+#contact p:first-child {
+  background-color: rgba(58, 152, 88, 0.543);
+}
+
+#occupation {
+  background-color: rgba(255, 255, 255, 0.509);
+  width: 100%;
+  text-align: center;
+}
+
+#brand {
+  display: none;
+}
+
+img {
+  border-radius: 50%;
+  border: 5px solid rgba(0, 128, 0, 0.331);
+}
+
+/* desktop view  ------------------------------------------------ */
+@media only screen and (min-width: 600px) {
+  main {
+    width: 700px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: auto auto auto 64px;
+    grid-template-areas:  
+    "status name"
+    "img occupation"
+    "img brand"
+    "contact offer";
+  }
+
+  #status {
+    grid-area: status;
+    width: 100%;
+    margin-left: auto;
+    text-align: left;
+    margin: 10px;
+  }
+
+  #name {
+    grid-area: name;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  img {
+    grid-area: img;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 5px solid rgba(0, 128, 0, 0.331);
+    grid-row-start: 1;
+  }
+
+  #occupation {
+    grid-area: occupation;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+  }
+
+  #brand {
+    grid-area: brand;
+    display: flex;
+    border-left: 2px solid hsla(127, 88%, 14%, 0.357);
+    background-color: white;
+    padding-left: 20px;
+    border-left: 2px solid #0b4d42;
+  }
+
+
+  #contact {
+    grid-area: contact;
+    height: 100%;
+}
+
+  #contact p {
+    grid-area: contact;
+    background-color: rgba(72, 128, 76, 0.777);
+  }
+  
+  #offer {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    padding-left: 20px;
+  }
+}
+
+/* It isn't perfect. I really want it to be. Note, I started this lab off by following along with an IA's lab review and I want to try building it 100% from scratch so that I can understand flex and grid better. */ 
+
